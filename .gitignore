@@ -1,0 +1,3 @@
+# 忽略Mac OS属性文件
+
+.DS_Store
