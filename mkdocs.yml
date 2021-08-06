@@ -6,6 +6,7 @@ site_author: WOC-BUG
 repo_name: 'WOC-BUG/Game-Engines-Study-Notes'
 repo_url: https://github.com/WOC-BUG/Game-Engines-Study-Notes
 
+# Table of Contents
 nav:
     - 简介:
       - 首页: index.md
@@ -41,6 +42,8 @@ extra:
   social:
     - type: 'github'
       link: 'https://github.com/WOC-BUG'
+    - type: 'github'
+      link: 'https://github.com/YanhuiJessica'
 
 # Extensions
 markdown_extensions:
