@@ -4,7 +4,6 @@ description: Cocos Creator 2.4.5 | typescript
 ---
 
 
-
 ### 一、sync-demo
 
 先从loading UI看起
@@ -151,13 +150,15 @@ IS_DIRTIONS需要修改？
 
   答案：如果一个方法和他所在类的实例对象无关，那么它就应该是静态的，否则就应该是非静态。因此像工具类，一般都是静态的。
 
-- [ ] 游戏开始上报的这些数据需要改吗？是固定的吗？
+- [x] 游戏开始上报的这些数据需要改吗？是固定的吗？
 
-  ​		GameMsg.get_is_sync();
+  ​        GameMsg.get_is_sync();
 
   ​        GameMsg.get_role();
 
   ​        GameMsg.getInstance().gameStart();
+  
+  是固定的，框架里写好了，无需改动
 
 
 

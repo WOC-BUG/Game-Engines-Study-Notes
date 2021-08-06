@@ -250,7 +250,7 @@ export default class TweenUtil {
 在处理派发事件之前，判断一下是否启用了blockevent，若有就return，不处理动效。
 如图：
 
-<img src="./img/1.png" style="zoom: 33%;" />
+<img src="img/1.png" style="zoom: 33%;" />
 
 
 
@@ -258,7 +258,7 @@ export default class TweenUtil {
 
 但是！上面又导致了新的问题。在网速较差的IOS平台，同步就会出问题。如图：
 
-<img src="./img/2.png" style="zoom: 50%;" />
+<img src="img/2.png" style="zoom: 50%;" />
 
 即，电脑端的两次派发都是独立执行的，没有问题。但在IOS同步的时候，第一次点击时网差卡了一下，开始派发事件的时候晚了一点。第二次同步的时候网又好了，准时开始派发事件。这样会导致IOS端，第二次事件接收时由于第一次事件还没执行完而被丢弃，导致操作无效。
 
@@ -278,4 +278,4 @@ export default class TweenUtil {
 
 如图：
 
-<img src="./img/3.png" style="zoom:50%;" />
+<img src="img/3.png" style="zoom:50%;" />
