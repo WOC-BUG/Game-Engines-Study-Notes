@@ -1,0 +1,75 @@
+# Project Information
+site_name: Game-Engines-Study-Notes
+site_author: WOC-BUG
+
+# Repository
+repo_name: 'WOC-BUG/Game-Engines-Study-Notes'
+repo_url: https://github.com/WOC-BUG/Game-Engines-Study-Notes
+
+nav:
+    - 简介:
+      - 首页: index.md
+
+# Theme
+theme:
+    name: 'material'
+    custom_dir: docs/overrides
+    language: 'zh'
+    palette:
+      primary: 'white'
+      accent: 'red'
+    logo:
+      icon: 'school'
+    feature:
+      tabs: true
+    font:
+      text: 'Fira Sans'
+      code: 'Fira Mono'
+
+plugins:
+    - search
+    - git-revision-date-localized:
+        type: datetime
+        time_zone: Asia/Shanghai
+        locale: en
+    - git-authors
+
+extra_javascript:
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/WOC-BUG'
+
+# Extensions
+markdown_extensions:
+    - admonition
+    - codehilite:
+        guess_lang: false
+        linenums: true
+    - def_list
+    - footnotes
+    - meta
+    - toc:
+        permalink: true
+    - pymdownx.arithmatex
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.emoji:
+        emoji_generator: !!python/name:pymdownx.emoji.to_svg
+    - pymdownx.inlinehilite
+    - pymdownx.keys
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.progressbar
+    - pymdownx.smartsymbols
+    - pymdownx.superfences:
+        custom_fences:
+          - name: math
+            class: arithmatex
+            format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.tilde
