@@ -10,12 +10,12 @@ repo_url: https://github.com/WOC-BUG/Game-Engines-Study-Notes
 nav:
     - 简介:
       - 首页: index.md
-      - Unity3D:
-	- Unity学习笔记(基础篇): Unity基础学习笔记.md
-      - Cocos2d-x:
-	- Cocos2d-x基础手册：Cocos2dx基础手册.md
-	- Cocos2d-x学习笔记(基础篇)：Cocos Creator2.4.5项目学习笔记.md
-	- Cocos2d-x学习笔记(实践篇)：Cocos2dx实践笔记.md
+    - Unity3D:
+      - Unity学习笔记(基础篇): Unity基础学习笔记.md
+    - Cocos2d-x:
+      - Cocos2d-x基础手册：Cocos2dx基础手册.md
+      - Cocos2d-x学习笔记(基础篇)：Cocos Creator2.4.5项目学习笔记.md
+      - Cocos2d-x学习笔记(实践篇)：Cocos2dx实践笔记.md
 
 # Theme
 theme:
