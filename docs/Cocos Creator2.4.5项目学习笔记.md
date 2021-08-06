@@ -1,11 +1,11 @@
-[TOC]
+---
+title: Cocos2d-x - 项目学习笔记
+description: Cocos Creator 2.4.5 | typescript
+---
 
-# Cocos Creator2.4.5项目学习笔记
 
-源码库：https://git.100tal.com/peiyou_jiaohuyouxi_shuangshi
-zip包库：https://git.100tal.com/peiyou_zaixian_ketang/courseware_01
 
-## 一、sync-demo
+### 一、sync-demo
 
 先从loading UI看起
 
@@ -21,9 +21,7 @@ CoursewareKey是标识自己项目的唯一码，在网上随机生成24位
 
 
 
----
-
-## 二、jar-cocos
+### 二、jar-cocos
 
 frameControl是js文件中的，可以直接通过window.frameControl调用
 
@@ -34,16 +32,16 @@ IS_DIRTIONS需要修改？
 * `showUI`和`showUI_Simplify`的区别？
 *  隐藏`LoadingUI`和删除`LoadingUI`的区别？为啥要把删除改为隐藏？
 
----
 
-### RaceGame
+
+### 三、RaceGame
 
 * 代码命名规范的重要性
 * 尽量通过creater拖拽的方式对节点进行复制，少用cc.find()或node.findChildByName()方式，因为层级关系容易改变，节点名称也容易改变。
 
----
 
-### 视频学习
+
+### 四、视频学习
 
 * 音频的加载模式必须是dom audio，有的用户设备太老了无法兼容
 
@@ -86,9 +84,9 @@ IS_DIRTIONS需要修改？
 
 * `declare`是用于定义`js`中传入数据的类型
 
----
 
-## 三、《一刻千金》项目
+
+### 五、《一刻千金》项目
 
 * `parseInt`字符串转`number`
 * `isNaN(x)`检测x是否非数字值
@@ -100,9 +98,9 @@ IS_DIRTIONS需要修改？
 * `()=>{callback&&callback();}`      // 如果callback存在，就执行callback()
 * `A.trigger(B)`触发`A`的事件`B`
 
----
 
-## 四、《哪边多哪边少》项目
+
+### 六、《哪边多哪边少》项目
 
 #### GameData
 
@@ -161,11 +159,9 @@ IS_DIRTIONS需要修改？
 
   ​        GameMsg.getInstance().gameStart();
 
----
 
 
-
-## 五、海量老师项目
+### 	七、海量老师项目
 
 1. 将可以被拖拽的所有节点放在一个空节点下，然后将拖拽脚本放在外部空节点上，这样可以单独拖拽其所有子节点。
 
