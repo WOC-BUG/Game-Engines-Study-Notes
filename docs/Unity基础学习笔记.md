@@ -8,6 +8,8 @@ description: Unity 2020.3.14f1c1 | c#
 ### 快捷键
 
 * 找到物体位置：选中物体，鼠标移到场景窗口，按F键
+* 缩放：按住 `Alt`（Window)/`Option`(macOS)，鼠标右键拖拽
+* 旋转：按住 `Alt`（Window)/`Option`(macOS)，鼠标左键拖拽
 * Y轴归位：按下`shift`+点击方向轴中间的小方块
 * 克隆物体：
   	1. `Ctrl(/command) + D` 
