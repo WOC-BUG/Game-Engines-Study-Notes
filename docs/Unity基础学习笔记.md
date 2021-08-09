@@ -65,18 +65,18 @@ description: Unity 2020.3.14f1c1 | c#
 
 * 自转与公转：
 
-  * 自传
+    * 自转
 
-    ```c#
-    float angle = 30f * Time.deltaTime;
-    transform.Rotate(0,angle,0);
-    ```
+      ```c#
+      float angle = 30f * Time.deltaTime;
+      transform.Rotate(0,angle,0);
+      ```
 
-  * 公转
+    * 公转
 
-    ```c#
-    transform.parent.Rotate(0, -angle, 0);	// 公转就是让一个空节点做父节点自转，则子物体都会跟着转
-    ```
+      ```c#
+      transform.parent.Rotate(0, -angle, 0);	// 公转就是让一个空节点做父节点自转，则子物体都会跟着转
+      ```
 
     
 
@@ -94,10 +94,10 @@ description: Unity 2020.3.14f1c1 | c#
 
 * material：
 
-  * Albedo 反照率，可设置贴图
-  * Metallic 金属性，值越大越像金属
-  * Smoothness 平滑度
-  * Normal Map 法线贴图，用于表现物体凹凸不平的材质
+    * Albedo 反照率，可设置贴图
+    * Metallic 金属性，值越大越像金属
+    * Smoothness 平滑度
+    * Normal Map 法线贴图，用于表现物体凹凸不平的材质
 
   
 
@@ -105,9 +105,9 @@ description: Unity 2020.3.14f1c1 | c#
 
 * 创建Animation：创建动画 -> 属性面板`Inspector`字样处调至`Debug`模式 -> 勾选`Legacy`标签 -> 调回`normal`模式 -> 挂载动画文件到物体上
 * 制作移动动画：
-  * 打开编辑窗口：`Window` -> `Animation` ->` Animation`
-  * 选中要添加动画的物体，选中 `Add Property` -> `Transform` -> `Position`
-  * 可使用滚轮缩放，按住滚轮可移动
-  * 点击红色按钮，进入录制模式，然后进行编辑，编辑结束后取消录制模式
+    * 打开编辑窗口：`Window` -> `Animation` ->` Animation`
+    * 选中要添加动画的物体，选中 `Add Property` -> `Transform` -> `Position`
+    * 可使用滚轮缩放，按住滚轮可移动
+    * 点击红色按钮，进入录制模式，然后进行编辑，编辑结束后取消录制模式
 * Animation编辑窗口可以批量操作：多选、拖拽等进行多个移动/缩放
 * Animation编辑窗口，左下角选中`Curves`进入曲线模式
