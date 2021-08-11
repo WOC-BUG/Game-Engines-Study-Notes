@@ -8,9 +8,15 @@ description: Unity 2020.3.14f1c1 | c#
 ### 快捷键
 
 * 找到物体位置：选中物体，鼠标移到场景窗口，按F键
+
+* 按住右键进入飞跃模式，按`W、A、S、D、E、Q`控制视角`前、后、左、右、上、下`移动
+
 * 缩放：按住 `Alt（/Option)`，鼠标右键拖拽
+
 * 旋转：按住 `Alt（/Option)`，鼠标左键拖拽
+
 * Y轴归位：按下`shift`+点击方向轴中间的小方块
+
 * 克隆物体：
   	1. `Ctrl(/command) + D` 
    	2. 右键物体 -> Duplicate
@@ -40,10 +46,9 @@ description: Unity 2020.3.14f1c1 | c#
 
 ### 编辑器
 
-* Cube和Cube顶点对齐：`Shift+V` -> 选中一个顶点，拖拽到另一个要对其的位置上，会自动吸附对齐
-
+* 重置物体`Transform`参数：选中一个`Game Object` ，在右侧`Inspector`面板的`Transform` 属性中，点击小三点，选择`Reset`
+* Cube和Cube顶点对齐：`Shift+V` -> 选中一个顶点的白框，拖拽到另一个要对其的位置上，会自动吸附对齐
 * Plane和Cube顶点对齐：选中`Plane` -> `Scene`左上角切换为`Shaded`或者`Shaded WireFrame `显示出的每一个格子顶点都是可以对齐的（另外补充，`Wireframe` 表示网格显示）
-
 * 多个物体旋转：
   1. 选中多个物体，左上方切换为 `Pivot` 表示多个物体按照各自中心旋转
   2. 选中多个物体，左上方切换为 `Center` 表示多个物体按照统一轴旋转
@@ -153,15 +158,27 @@ description: Unity 2020.3.14f1c1 | c#
 
   * `Exit Time`：多少轮/秒时退出
   * `Fixed Duration`：勾选——`秒`；不勾选——`轮`
+  * `Transition Duration`：状态与状态之间的过渡衔接时间
+
+* 状态机行为：选中某个状态 -> `Add Behaviour` -> `New Script`
 
 * 状态机API：
 
   ```c#
-  Animation animator = GetComponent<Animator>()
+  // 按某个键时，设置状态参数的值，从而控制动画状态的切换
+  Animator animator = GetComponent<Animator>()
   animator.SetBool("dancing", Input.GetKey(KeyCode.V));	// 按V键dancing
   animator.SetBool("jump", Input.GetKey(KeyCode.Space));	// 按空格jump
   animator.SetIntger(...);
   animator.setFloat(...);
   ```
 
-  
+  ```c#
+  // 判断当前状态是否是"<Name>"
+  Animator anim = GetComponent<Animator>()
+  if(anim.GetCurrentAnimatorStateInfo(0).IsName("..."))  // 在默认层(0)，当前状态名是否是"..."
+  {
+    ...
+  }
+  ```
+
