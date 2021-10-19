@@ -1,0 +1,951 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Cocos Creator 2.4.5 | typescript ｜ 王浩宇老师整理">
+      
+      
+      
+        <meta name="author" content="WOC-BUG">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Cocos2d-x - 基础手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Game-Engines-Study-Notes" aria-label="Game-Engines-Study-Notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Game-Engines-Study-Notes
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Cocos2d-x - 基础手册
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/WOC-BUG/Game-Engines-Study-Notes/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WOC-BUG/Game-Engines-Study-Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." class="md-tabs__link">
+          简介
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Unity%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
+          Unity3D
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Cocos2d-x
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Game-Engines-Study-Notes" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    Game-Engines-Study-Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/WOC-BUG/Game-Engines-Study-Notes/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WOC-BUG/Game-Engines-Study-Notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      简介
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        简介
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="首页" class="md-nav__link">
+      首页
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unity3D
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Unity3D
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unity%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Unity学习笔记(基础篇)" class="md-nav__link">
+      Unity学习笔记(基础篇)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Cocos2d-x
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Cocos2d-x
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        基础手册
+      </label>
+    
+    <a href="./" title="基础手册" class="md-nav__link md-nav__link--active">
+      基础手册
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    摄像机
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    预制体
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node" class="md-nav__link">
+    node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    事件机制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    生命周期
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    一个完整的生命周期
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    加载机制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    渲染机制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    图集
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawcall" class="md-nav__link">
+    drawcall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fps" class="md-nav__link">
+    帧频（fps)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    坐标系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    锚点
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Cocos%20Creator2.4.5%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="项目学习笔记" class="md-nav__link">
+      项目学习笔记
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Cocos2dx%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0/" title="实践笔记" class="md-nav__link">
+      实践笔记
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    摄像机
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    预制体
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node" class="md-nav__link">
+    node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    事件机制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    生命周期
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    一个完整的生命周期
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    加载机制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    渲染机制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    图集
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawcall" class="md-nav__link">
+    drawcall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fps" class="md-nav__link">
+    帧频（fps)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    坐标系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    锚点
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+  
+  <div style="color: gray;">
+    <small>
+      Cocos Creator 2.4.5 | typescript ｜ 王浩宇老师整理
+    </small>
+  </div>
+  
+
+
+  
+                
+                  <a href="https://github.com/WOC-BUG/Game-Engines-Study-Notes/edit/master/docs/Cocos2dx基础手册.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>基础手册</h1>
+                
+                <h2 id="_1">摄像机<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>客户端看到的画面，类似viewport,，摄像机是cocos creator里的一个组件，每个场景中至少需要一个摄像机，也可以创建多个,创建场景时会自动生成一个摄像机，作为主摄。</p>
+<h2 id="_2">场景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>场景代表的当前的游戏世界，引擎一次性只会加载一个场景，如果需要切换场景，默认会将场景中所有的节点和其他实例销毁</p>
+<ul>
+<li>场景的加载和切换使用 cc.director.loadScene(<code>newScene</code>)</li>
+<li>如果需要换场，让场景切换时不被自动销毁，常驻内存，需要一个组件控制所有场景的加载并把它标记为常驻节点，使用cc.game.addPersistRootNode(myNode)</li>
+<li>取消节点的常驻属性 cc.game.removePersistRootNode(myNode)</li>
+<li>场景的预加载　cc.director.preloadScene</li>
+</ul>
+<h2 id="_3">预制体<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>预先配置好的游戏对象，常见为动态加入，多次调用对象，生成方法，在场景中编辑好节点，从层级选择器拖到资源选择器自动生成预制体，在属性检查器中可以选择自动同步修改，双击资源选择器的预制体可以对节点进行进一步修改</p>
+<h2 id="node">node<a class="headerlink" href="#node" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Cocos create以组件式开发为核心，节点是承载组件的实体，节点提供了位置、旋转、缩放、尺寸、颜色等信息，复杂的组件有复杂的节点树，拖动父级节点的位置可以将子节点也同时移动，一个节点上可以添加多个组件，形成节点树，但是一个节点只能添加一个渲染组件</p>
+</li>
+<li>
+<p>脚本中动态创建节点，new cc.Node()</p>
+</li>
+<li>克隆节点 cc.instantiate</li>
+<li>创建预制节点（和克隆节点类似），设置预制体，在properties中声明，type设置为cc.Prefab，使用cc.instantiate生成</li>
+<li>销毁节点 node.destroy()，并不会立即销毁，而是当帧逻辑更新结束后，统一执行，可以用cc.isValid来判断</li>
+</ul>
+<h2 id="_4">事件机制<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>事件处理是在cc.Node中完成，对于组件可以通过this.node用来注册和监听事件</p>
+<ul>
+<li>
+<p>监听事件通过this.node.on()函数来注册（第三个参数绑定调用者）</p>
+</li>
+<li>
+<p>off()关闭监听（参数和on一样）</p>
+</li>
+<li>
+<p>发射事件 emit(第二个参数传递事件参数）</p>
+</li>
+<li>
+<p>派送事件，dispatcheEvent(可以做事件传递)，采用冒泡派送，使用event.stopPropagation()来中断事件传递</p>
+</li>
+<li>
+<p>系统事件</p>
+</li>
+</ul>
+<blockquote>
+<p>鼠标（节点系统事件）</p>
+<blockquote>
+<p>cc.Node.EventType.MOUSE_DOWN</p>
+<p>cc.Node.EventType.MOUSE_ENTER</p>
+</blockquote>
+<p>触摸（节点系统事件）</p>
+<blockquote>
+<p>支持节点树的事件冒泡</p>
+</blockquote>
+<p>键盘（全局系统事件）</p>
+<blockquote>
+<p>通过cc.systemEvent.on(type,callback,target)注册</p>
+<p>type类型</p>
+<blockquote>
+<p>cc.SystemEventType.KEY_DOWN</p>
+<p>cc.SystemEventType.KEY_UP</p>
+<p>cc.SystemEventType.DEVICEMOTION</p>
+</blockquote>
+</blockquote>
+<p>重力（全局系统事件）</p>
+</blockquote>
+<h2 id="_5">生命周期<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>onLoad(节点首次激活时触发)</p>
+<p>start(初始化一些中间状态的数据，这些数据可能会在update时改变)</p>
+<p>update(每一帧渲染前更新物体的行为，状态和方位，会在动画更新前执行)</p>
+<p>lateUpdate(在动效更新之后进行一些额外操作，希望所有组件的update都执行完后操作)</p>
+<p>当组件的enable属性从false变为true，或所在节点的active属性从false变为true,会激活onEnable回调，若节点第一次被创建且enabled为true,会在onLoad后，start之前被调用</p>
+<p>当组件的enabled属性从true变为false时，或者所在节点的active属性从true变为false,会激活onDisable回调</p>
+<p>当组件或者所在节点调用了destroy()，则会调用onDestroy回调，并在当帧结束时统一回收组件</p>
+</blockquote>
+<h3 id="_6">一个完整的生命周期<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>onLoad</p>
+<p>onEnable</p>
+<p>start</p>
+<p>update</p>
+<p>lateUpdate</p>
+<p>onDisable</p>
+<p>onDestroy</p>
+</blockquote>
+<h2 id="_7">加载机制<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>脚本的加载机制</li>
+</ul>
+<blockquote>
+<p>COCOS2D引擎</p>
+<p>插件脚本（有多个按项目中路径字母顺序依次加载）</p>
+<p>普通脚本（打包后只有一个文件，内部按require的依赖顺序依次初始化）</p>
+</blockquote>
+<h2 id="_8">渲染机制<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>根据节点的node._renderFlag状态进入到 transform=&gt;render分支，而不需要再进行多余的状态判断</p>
+<blockquote>
+<p>Node</p>
+<p>Transfrom</p>
+<p>Render</p>
+<p>Render&amp;transfrom</p>
+<p>Render&amp;transfrom&amp;children</p>
+</blockquote>
+<h2 id="_9">图集<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>多张图片合成一个集合，合成图集会减少游戏包体和内存占用，如果多个精灵节点使用同一张图集，会大大减少cpu的运算时间，提高运行效率</p>
+<h2 id="drawcall">drawcall<a class="headerlink" href="#drawcall" title="Permanent link">&para;</a></h2>
+<p>cpu调用图形接口，命令gpu进行图形渲染，为了优化需要减少drawcall的次数，如合批（批处理）方法，合并碎图成图集，同一图集按照顺序摆放节点，中间不能插入其他图集的节点</p>
+<ul>
+<li>优化注意</li>
+</ul>
+<p>默认字体的每个label都会产生，需要制作位图字体
+* 修改图片默认颜色会增加
+* 图片类型为九宫格会增加
+* 修改图片默认的透明度会增加
+* 默认的纯色图片会增加</p>
+<h2 id="fps">帧频（fps)<a class="headerlink" href="#fps" title="Permanent link">&para;</a></h2>
+<p>Fps：画面每秒传输帧数，帧数越多，越流畅，cocos中获得fps的几个val方法：cc.director.getAnimationInterval(),cc.director.getSecondsPerFrame()</p>
+<ul>
+<li>设置刷新帧频 cc.game.setFrameaRate()</li>
+</ul>
+<h2 id="_10">坐标系<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>cocos采用笛卡尔坐标系</p>
+<ul>
+<li>世界坐标系</li>
+</ul>
+<blockquote>
+<p>绝对坐标系，表示游戏场景</p>
+</blockquote>
+<ul>
+<li>本地坐标系</li>
+</ul>
+<blockquote>
+<p>相对坐标系，与节点相关联的坐标系，每个节点都有独立的坐标系，修改节点的位置属性是采用本地坐标系</p>
+</blockquote>
+<h2 id="_11">锚点<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>决定了节点以自身约束框中的哪一个点作为整个节点的位置，由anchorX和anchorY两个值来表示，通过节点尺寸计算锚点位置的乘数因子，范围都是0-1之间，（0，0）时，在左下角</p>
+                
+                  
+                
+                
+                  
+                  <hr>
+                  <div class="md-source-date">
+                    <small>
+                      
+                        最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">August 6, 2021 14:51:09</span>
+                      
+                    </small>
+                  </div>
+                
+              
+
+  
+    <div class="md-source-date">
+      <small>
+          Contributors: <span class='git-page-authors git-authors'><a href='mailto:1539777243@qq.com'>WOC-BUG</a></span>
+      </small>
+    </div>
+  
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Unity%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Unity学习笔记(基础篇)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                Unity学习笔记(基础篇)
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Cocos%20Creator2.4.5%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="项目学习笔记" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                项目学习笔记
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/WOC-BUG" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://github.com/YanhuiJessica" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.2.3",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

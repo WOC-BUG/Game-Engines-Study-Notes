@@ -1,0 +1,980 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Unity 2020.3.14f1c1 | c#">
+      
+      
+      
+        <meta name="author" content="WOC-BUG">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Unity3D - 基础手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Game-Engines-Study-Notes" aria-label="Game-Engines-Study-Notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Game-Engines-Study-Notes
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Unity3D - 基础手册
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/WOC-BUG/Game-Engines-Study-Notes/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WOC-BUG/Game-Engines-Study-Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." class="md-tabs__link">
+          简介
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Unity3D
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Cocos2dx%E5%9F%BA%E7%A1%80%E6%89%8B%E5%86%8C/" class="md-tabs__link">
+          Cocos2d-x
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Game-Engines-Study-Notes" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    Game-Engines-Study-Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/WOC-BUG/Game-Engines-Study-Notes/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WOC-BUG/Game-Engines-Study-Notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      简介
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        简介
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="首页" class="md-nav__link">
+      首页
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Unity3D
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Unity3D
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Unity学习笔记(基础篇)
+      </label>
+    
+    <a href="./" title="Unity学习笔记(基础篇)" class="md-nav__link md-nav__link--active">
+      Unity学习笔记(基础篇)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    快捷键
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    摄像机
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    光照
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    编辑器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    运动
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    遮挡
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    建模
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    动画
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-animation" class="md-nav__link">
+    1. Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 动画状态机
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Cocos2d-x
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Cocos2d-x
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Cocos2dx%E5%9F%BA%E7%A1%80%E6%89%8B%E5%86%8C/" title="基础手册" class="md-nav__link">
+      基础手册
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Cocos%20Creator2.4.5%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="项目学习笔记" class="md-nav__link">
+      项目学习笔记
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Cocos2dx%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0/" title="实践笔记" class="md-nav__link">
+      实践笔记
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    快捷键
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    摄像机
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    光照
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    编辑器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    运动
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    遮挡
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    建模
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    动画
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-animation" class="md-nav__link">
+    1. Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 动画状态机
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+  
+  <div style="color: gray;">
+    <small>
+      Unity 2020.3.14f1c1 | c#
+    </small>
+  </div>
+  
+
+
+  
+                
+                  <a href="https://github.com/WOC-BUG/Game-Engines-Study-Notes/edit/master/docs/Unity基础学习笔记.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Unity学习笔记(基础篇)</h1>
+                
+                <h3 id="_1">快捷键<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>找到物体位置：选中物体，鼠标移到场景窗口，按F键</p>
+</li>
+<li>
+<p>按住右键进入飞跃模式，按<code>W、A、S、D、E、Q</code>控制视角<code>前、后、左、右、上、下</code>移动</p>
+</li>
+<li>
+<p>缩放：按住 <code>Alt（/Option)</code>，鼠标右键拖拽</p>
+</li>
+<li>
+<p>旋转：按住 <code>Alt（/Option)</code>，鼠标左键拖拽</p>
+</li>
+<li>
+<p>Y轴归位：按下<code>shift</code>+点击方向轴中间的小方块</p>
+</li>
+<li>
+<p>克隆物体：</p>
+<ol>
+<li><code>Ctrl(/command) + D</code> </li>
+<li>右键物体 -&gt; Duplicate</li>
+</ol>
+</li>
+</ul>
+<h3 id="_2">摄像机<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>摄像机到我当前观察的位置：选中摄像机，<code>Game Object</code> -&gt; <code>Align With View</code></li>
+</ul>
+<h3 id="_3">光照<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>自动生成光照：<code>window</code> -&gt; <code>Rendering</code> -&gt; <code>Lighting</code> -&gt; <code>Scene</code> -&gt; <code>Generate Lighting</code>  ，生成后，游戏运行时自动加载这份光照数据</li>
+<li>光照大小：<code>window</code> -&gt; <code>Rendering</code> -&gt; <code>Lighting</code> -&gt; <code>Environment</code> -&gt; <code>Intensity Multiple</code> 调小</li>
+<li>天空盒：<code>window</code> -&gt; <code>Rendering</code> -&gt; <code>Lighting</code> -&gt; <code>Environment</code> -&gt; <code>Skybox Matrrial</code></li>
+<li>一般着色器可以选择<code>Skybox/6 Sided</code>，六张图分别表示上下前后左右，大小一般为<code>2048*2048</code>或 <code>4096*4096</code></li>
+<li>自制方法：<ol>
+<li>准备6张图片</li>
+<li>将6张图片的<code>Wrap Mode</code>全部设置为<code>Clamp</code>，使图片无缝拼贴</li>
+<li>新建<code>material</code>，并将<code>shader</code> 改为<code>Skybox/6 Sided</code></li>
+<li>将图片拽入对应位置（可将材质的属性面板右上角先锁定，再切换路径找图片）</li>
+<li>光照设置中设置天空盒</li>
+</ol>
+</li>
+</ul>
+<h3 id="_4">编辑器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>重置物体<code>Transform</code>参数：选中一个<code>Game Object</code> ，在右侧<code>Inspector</code>面板的<code>Transform</code> 属性中，点击小三点，选择<code>Reset</code></li>
+<li>Cube和Cube顶点对齐：<code>Shift+V</code> -&gt; 选中一个顶点的白框，拖拽到另一个要对其的位置上，会自动吸附对齐</li>
+<li>Plane和Cube顶点对齐：选中<code>Plane</code> -&gt; <code>Scene</code>左上角切换为<code>Shaded</code>或者<code>Shaded WireFrame</code>显示出的每一个格子顶点都是可以对齐的（另外补充，<code>Wireframe</code> 表示网格显示）</li>
+<li>多个物体旋转：</li>
+<li>选中多个物体，左上方切换为 <code>Pivot</code> 表示多个物体按照各自中心旋转</li>
+<li>选中多个物体，左上方切换为 <code>Center</code> 表示多个物体按照统一轴旋转</li>
+</ul>
+<h3 id="_5">运动<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>设置鼠标拖拽时的单位步长：<code>Edit</code> -&gt; <code>Grid and Snap</code> -&gt; <code>Move</code></p>
+</li>
+<li>
+<p>LookAt朝向物体的用法：</p>
+</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// this.gameObject 朝向 obj</span>
+<span class="n">Vector3</span> <span class="n">pos</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+<span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>    <span class="c1">// 应当朝向obj在地面上的投影</span>
+<span class="k">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">LookAt</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>     <span class="c1">// this的z轴指向目标在地面的投影</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>
+<p>自转与公转：</p>
+<ul>
+<li>自转</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">float</span> <span class="n">angle</span> <span class="p">=</span> <span class="m">30f</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">;</span>
+<span class="n">transform</span><span class="p">.</span><span class="n">Rotate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="n">angle</span><span class="p">,</span><span class="m">0</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>公转</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">transform</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">Rotate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">-</span><span class="n">angle</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>    <span class="c1">// 公转就是让一个空节点做父节点自转，则子物体都会跟着转</span>
+</code></pre></div>
+</td></tr></table>
+</li>
+</ul>
+<h3 id="_6">遮挡<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>Occludee Static</code>：透明物体不能遮挡，以及小物件，都不可能阻挡其他的东西，应标记为<code>Occludees</code>，但不遮挡。这意味着它们将被视为能被其他物体遮挡，但不会被视为作为遮挡物自身，这将有助于减少计算量。</li>
+</ul>
+<h3 id="_7">建模<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>模型的正面最好是与z轴的朝向一致，便于LookAt()等方法的使用。若不一致，可以通过建立父节点的方式，再调整该模型的Rotation。</p>
+</li>
+<li>
+<p>material：</p>
+<ul>
+<li>Albedo 反照率，可设置贴图</li>
+<li>Metallic 金属性，值越大越像金属</li>
+<li>Smoothness 平滑度</li>
+<li>Normal Map 法线贴图，用于表现物体凹凸不平的材质</li>
+</ul>
+</li>
+</ul>
+<h3 id="_8">动画<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h4 id="1-animation">1. Animation<a class="headerlink" href="#1-animation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>创建Animation：创建动画 -&gt; 属性面板<code>Inspector</code>字样处调至<code>Debug</code>模式 -&gt; 勾选<code>Legacy</code>标签 -&gt; 调回<code>normal</code>模式 -&gt; 挂载动画文件到物体上</p>
+</li>
+<li>
+<p>制作移动动画：</p>
+<ul>
+<li>打开编辑窗口：<code>Window</code> -&gt; <code>Animation</code> -&gt;<code>Animation</code></li>
+<li>选中要添加动画的物体，选中 <code>Add Property</code> -&gt; <code>Transform</code> -&gt; <code>Position</code></li>
+<li>可使用滚轮缩放，按住滚轮可移动</li>
+<li>点击红色按钮，进入录制模式，然后进行编辑，编辑结束后取消录制模式</li>
+</ul>
+</li>
+<li>
+<p>Animation编辑窗口可以批量操作：多选、拖拽等进行多个移动/缩放</p>
+</li>
+<li>
+<p>Animation编辑窗口，左下角选中<code>Curves</code>进入曲线模式</p>
+<ul>
+<li>按<code>F</code>显示曲线全貌</li>
+<li>滚轮缩放视图；<code>Ctrl</code> + 滚轮 ，仅缩放横轴；<code>shift</code> + 滚轮，仅缩放纵轴</li>
+<li>按住鼠标滚轮，可平移视图</li>
+<li>在线上双击，即可得到关键帧，右键<code>delete</code>即可删除关键帧</li>
+<li>将曲线改为直线的方法（即改为匀速运动）：右键关键帧 -&gt; <code>Both Tangents</code> -&gt; <code>Linear</code> (其中，Free是可编辑曲线，<code>Linear</code>是直线，<code>Contstant</code>是恒定值)</li>
+</ul>
+</li>
+<li>
+<p>动画事件：</p>
+<ul>
+<li>在动画进行到某个关键帧时，执行脚本中的方法：在红色时间轴下方的灰色区域右键 -&gt; <code>add Animation Event</code> -&gt; 在右边属性栏中指定方法（方法中可传入的参数类型为：<code>int</code>、<code>float</code>、<code>string</code>、<code>GameObject</code>）</li>
+</ul>
+</li>
+<li>
+<p>脚本中控制API播放动画：添加Animation组件 -&gt; 调整动画数量，取消自动播放 -&gt; 将Animator拖拽进属性 -&gt; 修改脚本</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Animation</span> <span class="n">anim</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Animation</span><span class="p">&gt;();</span>
+<span class="n">anim</span><span class="p">.</span><span class="n">Play</span><span class="p">(</span><span class="s">&quot;...&quot;</span><span class="p">);</span>
+<span class="n">anim</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
+</li>
+</ul>
+<h4 id="2">2. 动画状态机<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>创建状态：右键创建<code>Animation Controller</code> -&gt; 双击打开 -&gt; 在<code>controller</code>面板内右键创建状态</p>
+</li>
+<li>
+<p>设置默认状态：选中状态 -&gt; 右键 -&gt; <code>Set as Layer Default State</code></p>
+</li>
+<li>
+<p>创建过渡：选中状态 -&gt; 右键 -&gt; <code>Make Transition</code> -&gt; 选中另一个状态</p>
+</li>
+<li>
+<p>绑定动作：</p>
+</li>
+<li>
+<p>添加一个动画</p>
+</li>
+<li>选中某个状态，将动画拖拽到它的<code>Motion</code>参数中</li>
+<li>
+<p>选中物体，编辑动画，类型不能为<code>Legacy</code></p>
+</li>
+<li>
+<p>添加状态参数：左侧<code>Parameters</code>中创建参数 -&gt; 选中过渡线 -&gt; 在右侧<code>Inspector</code>中取消勾选<code>Has Exit Time</code>（该参数用于设置自动退出的时机） -&gt; 在<code>Conditions</code>属性中添加条件</p>
+</li>
+<li>
+<p><code>Has Exit Time</code>:</p>
+</li>
+<li>
+<p><code>Exit Time</code>：多少轮/秒时退出</p>
+</li>
+<li><code>Fixed Duration</code>：勾选——<code>秒</code>；不勾选——<code>轮</code></li>
+<li>
+<p><code>Transition Duration</code>：状态与状态之间的过渡衔接时间</p>
+</li>
+<li>
+<p>状态机行为：选中某个状态 -&gt; <code>Add Behaviour</code> -&gt; <code>New Script</code></p>
+</li>
+<li>
+<p>状态机API：</p>
+</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// 按某个键时，设置状态参数的值，从而控制动画状态的切换</span>
+<span class="n">Animator</span> <span class="n">animator</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Animator</span><span class="p">&gt;()</span>
+<span class="n">animator</span><span class="p">.</span><span class="n">SetBool</span><span class="p">(</span><span class="s">&quot;dancing&quot;</span><span class="p">,</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">V</span><span class="p">));</span> <span class="c1">// 按V键dancing</span>
+<span class="n">animator</span><span class="p">.</span><span class="n">SetBool</span><span class="p">(</span><span class="s">&quot;jump&quot;</span><span class="p">,</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">Space</span><span class="p">));</span>    <span class="c1">// 按空格jump</span>
+<span class="n">animator</span><span class="p">.</span><span class="n">SetIntger</span><span class="p">(...);</span>
+<span class="n">animator</span><span class="p">.</span><span class="n">setFloat</span><span class="p">(...);</span>
+</code></pre></div>
+</td></tr></table>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// 判断当前状态是否是&quot;&lt;Name&gt;&quot;</span>
+<span class="n">Animator</span> <span class="n">anim</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Animator</span><span class="p">&gt;()</span>
+<span class="k">if</span><span class="p">(</span><span class="n">anim</span><span class="p">.</span><span class="n">GetCurrentAnimatorStateInfo</span><span class="p">(</span><span class="m">0</span><span class="p">).</span><span class="n">IsName</span><span class="p">(</span><span class="s">&quot;...&quot;</span><span class="p">))</span>  <span class="c1">// 在默认层(0)，当前状态名是否是&quot;...&quot;</span>
+<span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+                
+                  
+                
+                
+                  
+                  <hr>
+                  <div class="md-source-date">
+                    <small>
+                      
+                        最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">August 11, 2021 10:30:26</span>
+                      
+                    </small>
+                  </div>
+                
+              
+
+  
+    <div class="md-source-date">
+      <small>
+          Contributors: <span class='git-page-authors git-authors'><a href='mailto:1539777243@qq.com'>WOC-BUG</a>, <a href='mailto:52900008+YanhuiJessica@users.noreply.github.com'>YanhuiJessica</a></span>
+      </small>
+    </div>
+  
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="首页" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                首页
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Cocos2dx%E5%9F%BA%E7%A1%80%E6%89%8B%E5%86%8C/" title="基础手册" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                基础手册
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/WOC-BUG" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://github.com/YanhuiJessica" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.2.3",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

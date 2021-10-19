@@ -1,0 +1,1211 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Cocos Creator 2.4.5 | typescript">
+      
+      
+      
+        <meta name="author" content="WOC-BUG">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Cocos2d-x - 实践笔记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="0" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Game-Engines-Study-Notes" aria-label="Game-Engines-Study-Notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Game-Engines-Study-Notes
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Cocos2d-x - 实践笔记
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/WOC-BUG/Game-Engines-Study-Notes/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WOC-BUG/Game-Engines-Study-Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." class="md-tabs__link">
+          简介
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Unity%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-tabs__link">
+          Unity3D
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Cocos2dx%E5%9F%BA%E7%A1%80%E6%89%8B%E5%86%8C/" class="md-tabs__link md-tabs__link--active">
+          Cocos2d-x
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Game-Engines-Study-Notes" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    Game-Engines-Study-Notes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/WOC-BUG/Game-Engines-Study-Notes/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WOC-BUG/Game-Engines-Study-Notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      简介
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        简介
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="首页" class="md-nav__link">
+      首页
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unity3D
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Unity3D
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unity%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Unity学习笔记(基础篇)" class="md-nav__link">
+      Unity学习笔记(基础篇)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Cocos2d-x
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Cocos2d-x
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Cocos2dx%E5%9F%BA%E7%A1%80%E6%89%8B%E5%86%8C/" title="基础手册" class="md-nav__link">
+      基础手册
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Cocos%20Creator2.4.5%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="项目学习笔记" class="md-nav__link">
+      项目学习笔记
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        实践笔记
+      </label>
+    
+    <a href="./" title="实践笔记" class="md-nav__link md-nav__link--active">
+      实践笔记
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、点击不规则按钮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、资源压缩
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、新手引导
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    四、抽卡游戏，卡牌路径写法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    五、游戏中常用设计模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    六、消息序列机制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    七、坑
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    八、遇到的问题及解决方法
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-a" class="md-nav__link">
+    1. 问题描述A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    原因
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    解决方案
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-b" class="md-nav__link">
+    2. 问题描述B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    解决办法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-c" class="md-nav__link">
+    3. 问题描述C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    原因
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、点击不规则按钮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、资源压缩
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、新手引导
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    四、抽卡游戏，卡牌路径写法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    五、游戏中常用设计模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    六、消息序列机制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    七、坑
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    八、遇到的问题及解决方法
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-a" class="md-nav__link">
+    1. 问题描述A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    原因
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    解决方案
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-b" class="md-nav__link">
+    2. 问题描述B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    解决办法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-c" class="md-nav__link">
+    3. 问题描述C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    原因
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+  
+  <div style="color: gray;">
+    <small>
+      Cocos Creator 2.4.5 | typescript
+    </small>
+  </div>
+  
+
+
+  
+                
+                  <a href="https://github.com/WOC-BUG/Game-Engines-Study-Notes/edit/master/docs/Cocos2dx实践笔记.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>实践笔记</h1>
+                
+                <h3 id="_1">一、点击不规则按钮<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">HitTest</span> <span class="p">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     * 点是否在图形内</span>
+<span class="cm">     * @param pos 世界坐标</span>
+<span class="cm">     * @param rect 碰撞节点</span>
+<span class="cm">     */</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="nx">posInRect</span><span class="p">(</span><span class="nx">pos</span>: <span class="kt">cc.Vec2</span><span class="p">,</span> <span class="nx">rect</span>: <span class="kt">cc.Node</span><span class="p">)</span><span class="o">:</span> <span class="kt">boolean</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">convertToWorldSpaceAR</span><span class="p">(</span><span class="nx">rect</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">lb</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">v2</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mf">2</span><span class="p">,</span> <span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mf">2</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">rt</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">v2</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mf">2</span><span class="p">,</span> <span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mf">2</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">pos</span><span class="p">.</span><span class="nx">x</span> <span class="o">&gt;=</span> <span class="nx">lb</span><span class="p">.</span><span class="nx">x</span> <span class="o">&amp;&amp;</span> <span class="nx">pos</span><span class="p">.</span><span class="nx">y</span> <span class="o">&gt;=</span> <span class="nx">lb</span><span class="p">.</span><span class="nx">y</span> <span class="o">&amp;&amp;</span> <span class="nx">pos</span><span class="p">.</span><span class="nx">x</span> <span class="o">&lt;=</span> <span class="nx">rt</span><span class="p">.</span><span class="nx">x</span> <span class="o">&amp;&amp;</span> <span class="nx">pos</span><span class="p">.</span><span class="nx">y</span> <span class="o">&lt;=</span> <span class="nx">rt</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 图形点击检测, 锚点必须为左上角，或者中心。</span>
+<span class="cm">     * 所检测的图片不可打包图集</span>
+<span class="cm">     * @param posw 点击的世界坐标</span>
+<span class="cm">     * @param sprite 点击的图片</span>
+<span class="cm">     * @param accurate 是否开始像素精确判定</span>
+<span class="cm">     */</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="nx">imgHitTest</span><span class="p">(</span><span class="nx">posw</span>: <span class="kt">cc.Vec2</span><span class="p">,</span> <span class="nx">sprite</span>: <span class="kt">cc.Sprite</span><span class="p">,</span> <span class="nx">accurate</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span><span class="o">:</span> <span class="kt">boolean</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">accurate</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">spf</span> <span class="o">=</span> <span class="nx">sprite</span><span class="p">.</span><span class="nx">spriteFrame</span><span class="p">;</span>
+            <span class="kd">let</span> <span class="nx">pos</span> <span class="o">=</span> <span class="nx">sprite</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">convertToNodeSpaceAR</span><span class="p">(</span><span class="nx">posw</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">sprite</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">anchorX</span> <span class="o">==</span> <span class="mf">0</span> <span class="o">&amp;&amp;</span> <span class="nx">sprite</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">anchorY</span> <span class="o">==</span> <span class="mf">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">pos</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="o">-</span><span class="nx">pos</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">sprite</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">anchorX</span> <span class="o">==</span> <span class="mf">0.5</span> <span class="o">&amp;&amp;</span> <span class="nx">sprite</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">anchorY</span> <span class="o">==</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">w</span> <span class="o">=</span> <span class="nx">sprite</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+                <span class="kd">let</span> <span class="nx">h</span> <span class="o">=</span> <span class="nx">sprite</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+                <span class="nx">pos</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">w</span> <span class="o">/</span> <span class="mf">2</span> <span class="o">+</span> <span class="nx">pos</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">pos</span><span class="p">.</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">pos</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">h</span> <span class="o">/</span> <span class="mf">2</span> <span class="o">-</span> <span class="nx">pos</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">pos</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">h</span> <span class="o">/</span> <span class="mf">2</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">pos</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="kd">let</span> <span class="nx">tex</span> <span class="o">=</span> <span class="nx">spf</span><span class="p">.</span><span class="nx">getTexture</span><span class="p">();</span>
+            <span class="kd">let</span> <span class="nx">cvs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">cvs</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+            <span class="nx">cvs</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">tex</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+            <span class="nx">cvs</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">tex</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">drawImage</span><span class="p">(</span><span class="nx">tex</span><span class="p">.</span><span class="nx">getHtmlElementObj</span><span class="p">(),</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="nx">tex</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">tex</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="nx">tex</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">tex</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mf">1</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">cvs</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">getImageData</span><span class="p">(</span><span class="nx">pos</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">pos</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">).</span><span class="nx">data</span><span class="p">;</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+
+            <span class="k">return</span> <span class="nx">data</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span> <span class="o">!=</span> <span class="mf">0</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">posInRect</span><span class="p">(</span><span class="nx">posw</span><span class="p">,</span> <span class="nx">sprite</span><span class="p">.</span><span class="nx">node</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 点是否在多边形内</span>
+<span class="cm">     */</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="nx">polygonInside</span><span class="p">(</span><span class="nx">point</span>: <span class="kt">cc.Vec2</span><span class="p">,</span> <span class="nx">polygon</span>: <span class="kt">cc.Vec2</span><span class="p">[])</span><span class="o">:</span> <span class="kt">boolean</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">cn</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">,</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">polygon</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">l</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">p1</span> <span class="o">=</span> <span class="nx">polygon</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+            <span class="kd">let</span> <span class="nx">p2</span> <span class="o">=</span> <span class="nx">polygon</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mf">1</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">((</span><span class="nx">p1</span><span class="p">.</span><span class="nx">y</span> <span class="o">&lt;</span> <span class="nx">point</span><span class="p">.</span><span class="nx">y</span> <span class="o">&amp;&amp;</span> <span class="nx">p2</span><span class="p">.</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="nx">point</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">p1</span><span class="p">.</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="nx">point</span><span class="p">.</span><span class="nx">y</span> <span class="o">&amp;&amp;</span> <span class="nx">p2</span><span class="p">.</span><span class="nx">y</span> <span class="o">&lt;</span> <span class="nx">point</span><span class="p">.</span><span class="nx">y</span><span class="p">))</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">vt</span> <span class="o">=</span> <span class="p">(</span><span class="nx">point</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">p1</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nx">p2</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">p1</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">point</span><span class="p">.</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">p1</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">vt</span> <span class="o">*</span> <span class="p">(</span><span class="nx">p2</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">p1</span><span class="p">.</span><span class="nx">x</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="o">++</span><span class="nx">cn</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// 判断交点个数是奇数还是偶数，奇数在图内，偶数在图外，如果有特殊图形，则需要特殊判断</span>
+        <span class="nx">b</span> <span class="o">=</span> <span class="nx">cn</span> <span class="o">%</span> <span class="mf">2</span> <span class="o">==</span> <span class="mf">1</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_2">二、资源压缩<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>合并图集。但注意适用于图片大小差不多的情况。若图片素材大小相差过大，会导致图集留白过多，反而导致资源过大。</li>
+<li><code>nginx</code>开启<code>gzip</code>压缩</li>
+<li>切记少用大背景图片，大色块最好用自带素材改色</li>
+<li>CDN加速</li>
+</ul>
+<h3 id="_3">三、新手引导<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/WOC-BUG/Scene-Guide-Demo">新手引导样例项目</a></p>
+<h3 id="_4">四、抽卡游戏，卡牌路径写法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">TweenUtil</span> <span class="p">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 水平翻转（卡片翻转）</span>
+<span class="cm">     * @param node 节点</span>
+<span class="cm">     * @param duration 总时长</span>
+<span class="cm">     * @param onMiddle 中间状态回调</span>
+<span class="cm">     * @param onComplete 完成回调</span>
+<span class="cm">     */</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="nx">flip</span><span class="p">(</span><span class="nx">node</span>: <span class="kt">cc.Node</span><span class="p">,</span> <span class="nx">duration</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">onMiddle?</span>: <span class="kt">Function</span><span class="p">,</span> <span class="nx">onComplete?</span>: <span class="kt">Function</span><span class="p">)</span><span class="o">:</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="ow">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">tween</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">tween</span><span class="p">,</span>
+                <span class="nx">time</span> <span class="o">=</span> <span class="nx">duration</span> <span class="o">/</span> <span class="mf">2</span><span class="p">,</span>
+                <span class="nx">scaleX</span> <span class="o">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">scale</span><span class="p">,</span>
+                <span class="nx">skewY</span> <span class="o">=</span> <span class="nx">scaleX</span> <span class="o">&gt;</span> <span class="mf">0</span> <span class="o">?</span> <span class="mf">20</span> <span class="o">:</span> <span class="o">-</span><span class="mf">20</span><span class="p">;</span>
+            <span class="nx">tween</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">parallel</span><span class="p">(</span>
+                    <span class="nx">tween</span><span class="p">().</span><span class="nx">to</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="p">{</span> <span class="nx">scaleX</span>: <span class="kt">0</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">easing</span><span class="o">:</span> <span class="s1">&#39;quadIn&#39;</span> <span class="p">}),</span>
+                    <span class="nx">tween</span><span class="p">().</span><span class="nx">to</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="p">{</span> <span class="nx">skewY</span><span class="o">:</span> <span class="o">-</span><span class="nx">skewY</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">easing</span><span class="o">:</span> <span class="s1">&#39;quadOut&#39;</span> <span class="p">}),</span>
+                <span class="p">)</span>
+                <span class="p">.</span><span class="nx">call</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">onMiddle</span> <span class="o">&amp;&amp;</span> <span class="nx">onMiddle</span><span class="p">();</span>
+                <span class="p">})</span>
+                <span class="p">.</span><span class="nx">parallel</span><span class="p">(</span>
+                    <span class="nx">tween</span><span class="p">().</span><span class="nx">to</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="p">{</span> <span class="nx">scaleX</span><span class="o">:</span> <span class="o">-</span><span class="nx">scaleX</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">easing</span><span class="o">:</span> <span class="s1">&#39;quadOut&#39;</span> <span class="p">}),</span>
+                    <span class="nx">tween</span><span class="p">().</span><span class="nx">to</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="p">{</span> <span class="nx">skewY</span>: <span class="kt">0</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">easing</span><span class="o">:</span> <span class="s1">&#39;quadIn&#39;</span> <span class="p">}),</span>
+                <span class="p">)</span>
+                <span class="p">.</span><span class="nx">call</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">onComplete</span> <span class="o">&amp;&amp;</span> <span class="nx">onComplete</span><span class="p">();</span>
+                    <span class="nx">res</span><span class="p">();</span>
+                <span class="p">})</span>
+                <span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 二阶贝塞尔运动</span>
+<span class="cm">     * @param node 节点</span>
+<span class="cm">     * @param duration 移动时间</span>
+<span class="cm">     * @param posStart 移动起点</span>
+<span class="cm">     * @param posP 二阶贝塞尔曲线点P</span>
+<span class="cm">     * @param posEnd 移动终点</span>
+<span class="cm">     * @param easing 缓动效果</span>
+<span class="cm">     * @param onComplete 完成回调</span>
+<span class="cm">     * @returns </span>
+<span class="cm">     */</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="nx">bezier2Move</span><span class="p">(</span><span class="nx">node</span>: <span class="kt">cc.Node</span><span class="p">,</span> <span class="nx">duration</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">posStart</span>: <span class="kt">cc.Vec3</span><span class="p">,</span> <span class="nx">posP</span>: <span class="kt">cc.Vec3</span><span class="p">,</span> <span class="nx">posEnd</span>: <span class="kt">cc.Vec3</span><span class="p">,</span> <span class="nx">easing</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nx">onComplete?</span>: <span class="kt">Function</span><span class="p">)</span><span class="o">:</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="ow">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">node</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">instantiate</span><span class="p">(</span><span class="nx">posStart</span><span class="p">);</span>
+            <span class="nx">cc</span><span class="p">.</span><span class="nx">tween</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="nx">duration</span><span class="p">,</span> <span class="p">{</span> <span class="nx">position</span>: <span class="kt">posEnd</span> <span class="p">},</span> <span class="p">{</span>
+                    <span class="nx">easing</span>: <span class="kt">easing</span><span class="p">,</span>
+                    <span class="nx">progress</span><span class="o">:</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">add</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="kd">let</span> <span class="nx">pos</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">v3</span><span class="p">();</span>
+                        <span class="nx">pos</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">((</span><span class="mf">1</span> <span class="o">-</span> <span class="nx">add</span><span class="p">),</span> <span class="mf">2</span><span class="p">)</span> <span class="o">*</span> <span class="nx">start</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="mf">2</span> <span class="o">*</span> <span class="nx">add</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1</span> <span class="o">-</span> <span class="nx">add</span><span class="p">)</span> <span class="o">*</span> <span class="nx">posP</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span> <span class="mf">2</span><span class="p">)</span> <span class="o">*</span> <span class="nx">end</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+                        <span class="nx">pos</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">((</span><span class="mf">1</span> <span class="o">-</span> <span class="nx">add</span><span class="p">),</span> <span class="mf">2</span><span class="p">)</span> <span class="o">*</span> <span class="nx">start</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="mf">2</span> <span class="o">*</span> <span class="nx">add</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1</span> <span class="o">-</span> <span class="nx">add</span><span class="p">)</span> <span class="o">*</span> <span class="nx">posP</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span> <span class="mf">2</span><span class="p">)</span> <span class="o">*</span> <span class="nx">end</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+                        <span class="k">return</span> <span class="nx">pos</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">})</span>
+                <span class="p">.</span><span class="nx">call</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">onComplete</span> <span class="o">&amp;&amp;</span> <span class="nx">onComplete</span><span class="p">();</span>
+                    <span class="nx">res</span><span class="p">();</span>
+                <span class="p">})</span>
+                <span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 三阶贝塞尔运动</span>
+<span class="cm">     * @param node 节点</span>
+<span class="cm">     * @param duration 移动时间</span>
+<span class="cm">     * @param posStart 起点</span>
+<span class="cm">     * @param posP1 三阶贝塞尔曲线点P1</span>
+<span class="cm">     * @param posP2 三阶贝塞尔曲线点P2</span>
+<span class="cm">     * @param posEnd 终点</span>
+<span class="cm">     * @param easing 缓动效果</span>
+<span class="cm">     * @param onComplete 完成回调</span>
+<span class="cm">     * @returns </span>
+<span class="cm">     */</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="nx">bezier3Move</span><span class="p">(</span><span class="nx">node</span>: <span class="kt">cc.Node</span><span class="p">,</span> <span class="nx">duration</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">posStart</span>: <span class="kt">cc.Vec3</span><span class="p">,</span> <span class="nx">posP1</span>: <span class="kt">cc.Vec3</span><span class="p">,</span> <span class="nx">posP2</span>: <span class="kt">cc.Vec3</span><span class="p">,</span> <span class="nx">posEnd</span>: <span class="kt">cc.Vec3</span><span class="p">,</span> <span class="nx">easing</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nx">onComplete?</span>: <span class="kt">Function</span><span class="p">)</span><span class="o">:</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="ow">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">node</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">instantiate</span><span class="p">(</span><span class="nx">posStart</span><span class="p">);</span>
+            <span class="nx">cc</span><span class="p">.</span><span class="nx">tween</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="nx">duration</span><span class="p">,</span> <span class="p">{</span> <span class="nx">position</span>: <span class="kt">posEnd</span> <span class="p">},</span> <span class="p">{</span>
+                    <span class="nx">easing</span>: <span class="kt">easing</span><span class="p">,</span>
+                    <span class="nx">progress</span><span class="o">:</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">add</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="kd">let</span> <span class="nx">pos</span> <span class="o">=</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">v3</span><span class="p">();</span>
+                        <span class="nx">pos</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">start</span><span class="p">.</span><span class="nx">x</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">1</span> <span class="o">-</span> <span class="nx">add</span><span class="p">,</span> <span class="mf">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">3</span> <span class="o">*</span> <span class="nx">posP1</span><span class="p">.</span><span class="nx">x</span> <span class="o">*</span> <span class="nx">add</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">1</span> <span class="o">-</span> <span class="nx">add</span><span class="p">,</span> <span class="mf">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">3</span> <span class="o">*</span> <span class="nx">posP2</span><span class="p">.</span><span class="nx">x</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span> <span class="mf">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1</span> <span class="o">-</span> <span class="nx">add</span><span class="p">)</span> <span class="o">+</span> <span class="nx">end</span><span class="p">.</span><span class="nx">x</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span> <span class="mf">3</span><span class="p">)</span>
+                        <span class="nx">pos</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">start</span><span class="p">.</span><span class="nx">y</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">1</span> <span class="o">-</span> <span class="nx">add</span><span class="p">,</span> <span class="mf">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">3</span> <span class="o">*</span> <span class="nx">posP1</span><span class="p">.</span><span class="nx">y</span> <span class="o">*</span> <span class="nx">add</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">1</span> <span class="o">-</span> <span class="nx">add</span><span class="p">,</span> <span class="mf">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">3</span> <span class="o">*</span> <span class="nx">posP2</span><span class="p">.</span><span class="nx">y</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span> <span class="mf">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1</span> <span class="o">-</span> <span class="nx">add</span><span class="p">)</span> <span class="o">+</span> <span class="nx">end</span><span class="p">.</span><span class="nx">y</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span> <span class="mf">3</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="nx">pos</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">})</span>
+                <span class="p">.</span><span class="nx">call</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">onComplete</span> <span class="o">&amp;&amp;</span> <span class="nx">onComplete</span><span class="p">();</span>
+                    <span class="nx">res</span><span class="p">();</span>
+                <span class="p">})</span>
+                <span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_5">五、游戏中常用设计模式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>单例模式</li>
+<li>观察者模式</li>
+</ul>
+<h3 id="_6">六、消息序列机制<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>按照执行顺序从早到晚排序：</p>
+<p>普通代码 -&gt; <code>Promise()</code> -&gt; <code>setTimeout</code></p>
+<h3 id="_7">七、坑<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cocos Creator 2.4.3 在Button组件被另一个Button覆盖时，只能点击到上层按钮。若点击覆盖部分时，想要两个按钮同时响应，可自己注册监听事件。</li>
+<li>注意layout布局控件的使用：若子控件有添加和删除操作，记得排布后把父控件的layout属性删掉。否则删哪个都会自动对齐。</li>
+<li>注意Widget组件的使用，对于需要移动的物体，记得用过后要删除该属性。</li>
+</ul>
+<h3 id="_8">八、遇到的问题及解决方法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h4 id="1-a">1. 问题描述A<a class="headerlink" href="#1-a" title="Permanent link">&para;</a></h4>
+<p>点击到一个按钮派发点击事件，会触发动效和音效。需要在音效结束前禁止其他操作，于是在接受到派发事件后需要启用blockevent(禁止输入面板)。但是，如果点击下一个按钮的速度够快，还是会打断第一次点击的音效。</p>
+<h4 id="_9">原因<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>派发事件是需要时间的，第二次点击在第一次派发事件被处理之前，就导致了第一次点击音效被打断</p>
+<h4 id="_10">解决方案<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>在处理派发事件之前，判断一下是否启用了blockevent，若有就return，不处理动效。
+如图：</p>
+<p><img alt="问题A" src="../img/1.png" /></p>
+<h4 id="2-b">2. 问题描述B<a class="headerlink" href="#2-b" title="Permanent link">&para;</a></h4>
+<p>但是！上面又导致了新的问题。在网速较差的IOS平台，同步就会出问题。如图：</p>
+<p><img alt="问题B" src="../img/2.png" /></p>
+<p>即，电脑端的两次派发都是独立执行的，没有问题。但在IOS同步的时候，第一次点击时网差卡了一下，开始派发事件的时候晚了一点。第二次同步的时候网又好了，准时开始派发事件。这样会导致IOS端，第二次事件接收时由于第一次事件还没执行完而被丢弃，导致操作无效。</p>
+<h4 id="_11">解决办法<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>删除问题A的解决办法，因为只有我本地出了那个问题（可能是电脑太差了），其他打包出来的平台经测试都没有这个问题。</p>
+<h4 id="3-c">3. 问题描述C<a class="headerlink" href="#3-c" title="Permanent link">&para;</a></h4>
+<p>但是，同样的写法，为什么鼠标的移动事件不会出问题呢？</p>
+<h4 id="_12">原因<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>移动事件的事件派发是一连串的消息，它其实也丢失了第一个事件，但是它持续移动事件多，所以丢一两个不明显。</p>
+<p>如图：</p>
+<p><img alt="问题C" src="../img/3.png" /></p>
+                
+                  
+                
+                
+                  
+                  <hr>
+                  <div class="md-source-date">
+                    <small>
+                      
+                        最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">August 6, 2021 15:54:13</span>
+                      
+                    </small>
+                  </div>
+                
+              
+
+  
+    <div class="md-source-date">
+      <small>
+          Contributors: <span class='git-page-authors git-authors'><a href='mailto:1539777243@qq.com'>WOC-BUG</a></span>
+      </small>
+    </div>
+  
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Cocos%20Creator2.4.5%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="项目学习笔记" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                项目学习笔记
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/WOC-BUG" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://github.com/YanhuiJessica" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.2.3",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
